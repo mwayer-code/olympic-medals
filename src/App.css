@@ -1,3 +1,9 @@
+.countries{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 .content{
   margin: 0 auto;
   display: flex;
@@ -7,11 +13,11 @@
 
 .card{
   
-  width: 90%;
-  max-width: 750px;
-  min-width: 280px;
+  width: 33.3%;
+  min-width: 205px;
+  max-width: 275px;
   text-transform: capitalize;
-  border: 3px solid #B22234;
+  border: 3px solid lightslategray;
   border-radius: 16px;
   background-color: #4a4a4a ;
 
@@ -20,10 +26,16 @@
   .card-header{
     padding: 0 15px;
     color: #ffffff;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    I {
+      cursor: pointer;
+    }
   }
 
   hr{
-    border: 2px solid  #535bf2;
+    border: 2px solid lightslategray;
   }
 
   .card-body{
@@ -44,6 +56,26 @@
     cursor: pointer;
     transition: border-color 0.25s;
   }
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: 150%;
+    max-width: 750px;
+    min-width: 280px;
+    margin-bottom: 20px;
+  }
+  
+  .countries {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .content {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
