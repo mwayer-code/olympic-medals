@@ -38,12 +38,12 @@
     border: 2px solid lightslategray;
   }
 
-  .card-body{
+  .medals{
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  padding: 0px 15px;
-  color: gold;
+  align-items: left;
+  padding: 5px 10px 15px;
     button {
     border-radius: 16px;
     color: white;
@@ -62,9 +62,9 @@
 
 @media screen and (max-width: 768px) {
   .card {
-    width: 150%;
-    max-width: 750px;
-    min-width: 280px;
+    width: 100%;
+    max-width: 450px;
+    min-width: 205px;
     margin-bottom: 20px;
   }
   
