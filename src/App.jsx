@@ -1,13 +1,19 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Country from './components/Country';
 import './App.css';
 
 function App() {
   const [countries, setCountries] = useState([
-    { id: 1, name: 'United States', gold: 2 },
-    { id: 2, name: 'China', gold: 3 },
-    { id: 3, name: 'France', gold: 0 },
+    { id: 1, name: 'United States'},
+    { id: 2, name: 'China'},
+    { id: 3, name: 'France'},
   ]);
+
+  const medals = useRef([
+  { id: 1, name: "gold" },
+  { id: 2, name: "silver" },
+  { id: 3, name: "bronze" },
+]);
 
   function handleDelete(countryId){
     console.log(`delete country: ${countryId}`)
@@ -17,7 +23,7 @@ function App() {
   return (
     <div className='countries'>
       {countries.map((country) => (
-        <Country key={country.id} country={country} onDelete={handleDelete} />
+        <Country key={country.id} country={country} onDelete={handleDelete} medals={medals.current}/>
       ))}
     </div>
   );
