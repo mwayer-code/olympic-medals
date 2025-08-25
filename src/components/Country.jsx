@@ -1,4 +1,4 @@
-
+import Medal from "./Medal";
 export default function Country(props){
     return (
         <div className="content country">
@@ -8,9 +8,10 @@ export default function Country(props){
                     <i onClick={() => props.onDelete(props.country.id)}>🗑️</i>
                 </div>
                 <hr></hr>
-                <div className="card-body">
-                    <p>🥇 Gold Medals: {props.country.gold}</p>
-                    {/* <button onClick={handleClick}>+</button> */}
+                <div className="medals">
+                {props.medals.map((medal) => (
+                <Medal key={medal.id} medal={medal} />
+                ))}
                 </div>
                 
             </div>
