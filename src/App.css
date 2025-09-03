@@ -38,24 +38,83 @@
     border: 2px solid lightslategray;
   }
 
-  .medals{
+  .medal{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: left;
   padding: 5px 10px 15px;
-    button {
-    border-radius: 16px;
-    color: white;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: 1em;
-    font-weight: 800;
-    font-family: inherit;
-    background-color: #535bf2;
-    cursor: pointer;
-    transition: border-color 0.25s;
-  }
+  .increment {
+      margin-top: 3px;
+      border-radius: 20px;
+      color: white;
+      border: 1px solid gray;
+      padding: 0.5em .9em;
+      font-size: 1em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 800;
+      background-color: #4b53db;
+      cursor: pointer;
+      transition: border-color 0.25s;
+
+      &:active {
+          background-color: #2932dc;
+
+          .increment-text {
+            color: navy;
+          }
+        }
+
+        .increment-text {
+          font-size: 1em;
+        }
+        
+      }
+
+  .decrement{
+    margin-top: 3px;
+      border-radius: 20px;
+      color: white;
+      border: 1px solid gray;
+      padding: 0.6em 1em;
+      font-size: 1em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 800;
+      background-color: #b24444;
+      cursor: pointer;
+      transition: border-color 0.25s;
+
+      &:active {
+          background-color: #b42424;
+
+          .decrement-text {
+            color: maroon;
+          }
+        }
+        &:hover{
+          border-color: white;
+        }
+
+         &:disabled {
+          background-color: gray;
+          cursor: not-allowed;
+        }
+        .decrement-text{
+          font-size: .8em;
+        }
+
+        
+    }
+    .flexed-items {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
   }
 }
 
