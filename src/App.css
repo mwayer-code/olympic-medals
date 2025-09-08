@@ -1,7 +1,9 @@
 .countries{
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  align-items: stretch;
+  justify-items: center;
 }
 
 .content{
@@ -13,9 +15,9 @@
 
 .card{
   
-  width: 33.3%;
   min-width: 205px;
   max-width: 275px;
+  width: 100%;
   text-transform: capitalize;
   border: 3px solid lightslategray;
   border-radius: 16px;
@@ -119,6 +121,12 @@
 }
 
 
+@media screen and (max-width: 1024px) {
+  .countries {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media screen and (max-width: 768px) {
   .card {
     width: 100%;
@@ -135,6 +143,12 @@
   .content {
     flex-direction: column;
     align-items: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .countries {
+    grid-template-columns: 1fr;
   }
 }
 

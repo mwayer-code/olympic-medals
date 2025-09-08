@@ -1,9 +1,15 @@
 :root {
+  --main-bg-color: #242424;
+  --main-color: white;
+  --main-text-shadow: 0 0 0.25rem rgba(255, 255, 255, 0.6);
+  --white-color: #e2e2e2;
+  --button-color: #5e5e5e;
+  --main-dialog-bg-color: #242424;
+  color: var(--main-color);
+  background-color: var(--main-bg-color);
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

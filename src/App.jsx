@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import Country from './components/Country';
+import NewCountry from './components/NewCountry';
 import './App.css';
 
 function App() {
@@ -19,6 +20,14 @@ function App() {
     console.log(`delete country: ${countryId}`)
     setCountries(countries.filter((c) => c.id !== countryId))
   }
+
+  function handleAdd(name, gold, silver, bronze){
+    console.log(`add ${name}`)
+
+    const id = countries.length === 0 ? 1 : Math.max(...countries.map((country) => country.id)) + 1;
+    setCountries(countries.concat({id: id, name: name, gold: gold, silver: silver, bronze: bronze}))
+  }
+
   function countAllCountryMedals() {
     return countries.reduce((a, b) => a + b.gold + b.silver + b.bronze, 0);
   }
@@ -45,7 +54,10 @@ function App() {
           />
         ))}
       </div>
+      <NewCountry onAdd={handleAdd} />
     </div>
+
+
   );
 }
 

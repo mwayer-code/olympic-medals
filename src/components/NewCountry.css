@@ -1,0 +1,173 @@
+#trigger {
+  position: fixed;
+  left: 0.8rem;
+  bottom: 0.8rem;
+  cursor: pointer;
+  z-index: 80;
+  transform: scale(80%, 80%);
+  transition: transform 150ms ease-in-out;
+}
+#trigger:hover {
+  transform: rotate(90deg) scale(100%, 100%);
+}
+#dialog,
+#dialog * {
+  box-sizing: border-box;
+  border-radius: 0.3em;
+}
+#dialog {
+  background: var(--main-dialog-bg-color);
+  box-shadow: 0.15rem 0.15rem 0.35rem #1a1a1a;
+  border: 0.1rem solid #1a1a1a;
+  padding: 0.8rem;
+  width: 278px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(6, auto);
+  grid-template-areas:
+    "_header _header"
+    "_gold    _gold"
+    "_silver  _silver"
+    "_bronze  _bronze"
+    "_country   _country"
+    "_save   _cancel";
+}
+#dialog > header {
+  grid-area: _header;
+  text-shadow: var(--main-bg-color);
+  padding: 0.3rem 0.3rem 0 0.3rem;
+  font: 2.5rem "Luckiest Guy", cursive;
+  text-align: center;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+#dialog > div:has(> #country) {
+  grid-area: _country;
+}
+#dialog > div:has(> #gold) {
+  grid-area: _gold;
+  color: gold;
+  display: flex;
+  justify-content: space-between;
+
+}
+#dialog > div:has(> #silver) {
+  grid-area: _silver;
+  color: silver;
+  display: flex;
+  justify-content: space-between;
+}
+
+#dialog > div:has(> #bronze) {
+  grid-area: _bronze;
+  color: #cd7f32;
+  display: flex;
+  justify-content: space-between;
+}
+
+#dialog > div:has(> #save) {
+  grid-area: _save;
+}
+#dialog > div:has(> #cancel) {
+  grid-area: _cancel;
+}
+
+#dialog > div > #country, #dialog > div > #gold, #dialog > div > #silver, #dialog > div > #bronze {
+  font-size: 1.3rem !important;
+  padding: 0.2rem;
+}
+#dialog > div > #save,
+#dialog > div > #cancel,
+#dialog > div > #country {
+  border: 0;
+  font: normal 500 1.6rem "Teko", sans-serif;
+  outline: none;
+  width: 100%;
+}
+#dialog > div > input[type="number"] {
+  width: 4.5rem;
+  text-align: center;
+}
+#dialog > div > label {
+  font: normal 600 1.4rem "Teko", sans-serif;
+  align-self: center;
+}
+#dialog > div > button {
+  background-color: var(--button-color);
+  color: var(--white-color);
+  transition: all 400ms ease-in-out;
+}
+#dialog > div > button:hover:enabled {
+  background-color: var(--white-color);
+  color: var(--button-color);
+  cursor: pointer;
+}
+#dialog > div > button:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+#overlay {
+  background-color: var(--white-color);
+  opacity: 0.3;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 90;
+}
+
+@media screen and (min-width: 480px) {
+  #dialog {
+    width: 452px;
+    grid-template-columns: 1.3fr 1fr;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+      "_header  _header"
+      "_country _country"
+      "_gold    _gold"
+      "_silver  _silver"
+      "_bronze  _bronze"
+      "_save    _cancel"
+  }
+}
+
+.newCountry{
+    background-color: var(--button-color);
+    border: none;
+    font: normal 600 1.6rem "Teko", sans-serif;
+    color: var(--white-color);
+    padding: 10px 20px;
+    border-radius: 555px;
+    margin-left: 10px;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: background-color 0.3s ease;
+    user-select: none;
+    margin-top: 10px;
+
+    &:hover{
+        cursor: pointer;
+        background-color: green;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+        transform: scale(1.05);
+    }
+    &:active{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        transform: scale(0.95);
+    }
+
+
+    .newCountryText{
+        color: whitesmoke;
+        font-size: 2.2rem;
+    }
+}
